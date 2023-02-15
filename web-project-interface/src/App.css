@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+  background-color: rgb(167, 99, 231);
+  height: 100vh;
+}
+
+/* styling for the list displaying the stored projects */
+#projectList {
+  list-style: none;
+  padding: 10px 0;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 75%;
+  margin: auto;
+  height: auto;
+  background-color: rgb(137, 137, 192);
+}
+
+/* uniform styling for the form areas for each function to manage the list */
+#addInputs, #removeInputs, #updateInputs {
+  border: 3px solid black;
+  border-radius: 10px;
+  width: 75%;
+  margin: 1% auto;
+  background-color: rgb(137, 137, 192);
+}
+
+/* styling for all h3 elements */
+h3 {
+  margin: 8px 0;
+}
+
+/* styling for h2 title element */
+h2 {
+  margin: 0;
+  font-weight: 800;
+  font-size: 28px;
+  border-bottom: 3px solid black;
+  background-color: rgb(135, 135, 204);
+}
+
+/* uniform styling for the label elements in the  */
+#addInputForm > *, #removeInputForm > *, #updateInputForm > * {
+  margin: 1.2%;
+}
+
+/* styling for buttons to submit the http requests */
+.submitButton {
+  border-radius: 5px;
+  font-weight: 700;
+  width: 9%;
+}
