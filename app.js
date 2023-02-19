@@ -12,10 +12,6 @@ app.use(bodyParser.json())
 
 app.use(express.static("web-project-interface/build"))
 
-/* app.get("/", (req,res) => {
-    res.sendFile(path.resolve(__dirname, "web-project-interface", "build", "index.html"))
-}) */
-
 
 /* sets the port to 8080 */
 const port = process.env.PORT || 8080
@@ -97,6 +93,23 @@ app.post("/api", (req, res) => {
 
     const arrayObject = JSON.parse(array)
 
+    if (arrayObject.length === 0) {
+
+        /* creates new object */
+    const newObj = {
+        "id" : 1,
+        "title" : `${title}`,
+        "description" : `${description}`,
+        "URL" : `${url}`
+    }
+
+     /* runs function to add the new object */
+     addItem(newObj)
+     /* displays message of success */
+     res.send(`Item added ${JSON.stringify(req.body)}`)
+
+    } else {
+
     const nextID = Number(arrayObject[arrayObject.length -1].id) + 1
 
     /* creates new object */
@@ -106,12 +119,13 @@ app.post("/api", (req, res) => {
         "description" : `${description}`,
         "URL" : `${url}`
     }
+    
 
     /* runs function to add the new object */
     addItem(newObj)
     /* displays message of success */
     res.send(`Item added ${JSON.stringify(req.body)}`)
-    
+}
 })
 
 /* deletes item with provided id from the array */
